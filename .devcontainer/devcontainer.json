@@ -1,5 +1,5 @@
 {
-  "name": "seven-dev",
+  "name": "node-dev-env",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
 
   "features": {
@@ -8,21 +8,14 @@
     }
   },
 
-  "postCreateCommand": "npm install",
-
-  "containerEnv": {
-    "DATABASE_URL": "${localEnv:DATABASE_URL}"
-  },
+  "postCreateCommand": "",
 
   "customizations": {
     "vscode": {
       "settings": {
-        "editor.formatOnSave": true,
-        "files.eol": "\n",
-        "javascript.validate.enable": false
+        "editor.formatOnSave": true
       },
       "extensions": [
-        "Prisma.prisma",
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint"
       ]
