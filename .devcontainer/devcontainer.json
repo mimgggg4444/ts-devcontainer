@@ -1,26 +1,29 @@
 {
-  "name": "node-dev-env",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "name": "Node.js & TypeScript (DevPod + Postgres)",
+
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
 
   "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "20"
-    }
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
 
-  "postCreateCommand": "",
+  "postCreateCommand": "npm install",
 
   "customizations": {
     "vscode": {
-      "settings": {
-        "editor.formatOnSave": true
-      },
       "extensions": [
         "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint"
-      ]
+        "Prisma.prisma",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
     }
   },
+
+  "forwardPorts": [3000, 5432],
 
   "remoteUser": "node"
 }
